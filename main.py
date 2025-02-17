@@ -4,7 +4,8 @@ from handlers import (myinfo,
                       random,
                       start,
                       address,
-                      hours)
+                      hours,
+                      review_dialog)
 
 
 async def main():
@@ -13,6 +14,7 @@ async def main():
     myinfo.register_handler(dp)
     address.register_handler(dp)
     hours.register_handler(dp)
+    review_dialog.register_handler(dp)
     await dp.start_polling()
 
 
