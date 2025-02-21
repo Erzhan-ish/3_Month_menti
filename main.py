@@ -5,7 +5,8 @@ from handlers import (myinfo,
                       start,
                       address,
                       hours,
-                      review_dialog)
+                      review_dialog,
+                      FSM_store)
 
 
 async def main():
@@ -15,6 +16,7 @@ async def main():
     address.register_handler(dp)
     hours.register_handler(dp)
     review_dialog.register_handler(dp)
+    FSM_store.register_handlers(dp)
     database.create_tables()
     await dp.start_polling()
 

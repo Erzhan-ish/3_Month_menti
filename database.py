@@ -14,7 +14,26 @@ class Database:
                     phone_number TEXT,
                     rate INTEGER,
                     extra_comments TEXT
-                )        
+                )
+            """),
+            cursor.execute("""
+                CREATE TABLE IF NOT EXISTS store(
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    name_product TEXT,
+                    size TEXT,
+                    category TEXT,
+                    price INTEGER,
+                    photo TEXT,
+                    product_id INTEGER
+                )
+            """),
+            cursor.execute("""
+                CREATE TABLE IF NOT EXISTS product_deatil(
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    product_id INTEGER,
+                    category TEXT,
+                    infoproduct TEXT
+                )
             """)
             conn.commit()
 
